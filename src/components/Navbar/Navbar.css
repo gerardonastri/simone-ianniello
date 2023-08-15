@@ -1,0 +1,142 @@
+
+.navbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 20px;
+    width: 100%;
+    z-index: 3;
+}
+.navbar .wrapper{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    border-bottom: 1px solid gray;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+}
+.navbar h1{
+    color: white;
+    font-family: var(--font-3);
+    font-weight: 600;
+}
+
+.navbar__links{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: white;
+    font-family: var(--font-1);
+    font-weight: 500;
+}
+
+.navbar__links > a, .navbar__links span{
+    opacity: 0.6;
+}
+
+.navbar__links span:hover, .navbar__links > a:hover{
+    opacity: 1;
+}
+
+.navbar__dropdown{
+    position: relative;
+}
+.navbar__dropdown > span{
+    cursor: pointer;
+}
+
+.navbar__dropdown-container{
+    position: absolute;
+    top: 50px;
+    left: 0;
+    background-color: white;
+    padding: 15px 20px;
+    border-radius: 5px;
+    z-index: 3;
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease-in-out;
+}
+
+.navbar__dropdown-container.show{
+    opacity: 1;
+    visibility: visible;
+}
+
+.navbar__dropdown-container a{
+    color: black !important;
+}
+
+.navbar__links-icons{   
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    opacity: 0.6;
+}
+
+.navbar__links-icons i{
+    transition: all 0.2s ease-in-out;
+}
+
+.navbar__links-icons i:hover{
+    color: rgb(255, 217, 0);
+}
+
+
+.hamburger{
+    display: none;
+}
+
+
+
+@media screen and (max-width: 700px) {
+    .navbar{
+        background-color: var(--color-1);
+        z-index: 3;
+        height: 90px;
+    }
+    .navbar .wrapper{
+        border: none;
+        padding: 0 20px;
+    }
+    .navbar__dropdown{
+        display: none;
+    }
+    .hamburger{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .hamburger .bar{
+        width: 20px;
+        height: 2px;
+        background-color: white;
+    }
+    .navbar__links{
+        position: absolute;
+        top: 70px;
+        left: -120%;
+        width: 110%;
+        background-color: var(--color-1);
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid gray;
+        transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+    .navbar__links.active{
+        left: -5%;
+    }
+    .navbar__links-icons{
+        gap: 20px;
+        font-size: 20px;
+    }
+}
