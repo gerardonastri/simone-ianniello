@@ -28,7 +28,7 @@ const Navbar = () => {
             <a href="https://www.youtube.com/channel/UC8E8ijYAx5liwa20gm0Y_2g"><i className="fa-brands fa-youtube"></i></a>
             <a href="mailto:simon.audio24@gmail.com"><i className="fa-solid fa-envelope"></i></a>
             <a href="https://www.facebook.com/simone.ianniello.904"><i className="fa-brands fa-facebook"></i></a>
-            <a href="/"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://www.linkedin.com/in/simone-ianniello-0b8b87238/"><i class="fa-brands fa-linkedin-in"></i></a>
           </div>
         </div>
         {/* HAMBURGER  */}

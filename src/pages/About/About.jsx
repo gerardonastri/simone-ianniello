@@ -1,7 +1,32 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import './About.css'
+import {MdOutlineKeyboardDoubleArrowUp} from 'react-icons/md'
+
 
 const About = () => {
+
+  
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+  };
+
+  const [isActive, setIsActive] = useState(false)
+
+
+  const changeIsActive = () => {
+    if (window.scrollY >= 50) {
+      setIsActive(true)
+    } else {
+      setIsActive(false)
+    }
+  }
+
+  // Get the position of the red box in the beginning
+  useEffect(() => {
+    changeIsActive();
+    window.addEventListener("scroll", changeIsActive)
+  });
+
   return (
     <div className='container'>
       {/* HOME CONTAINER  */}
@@ -48,7 +73,7 @@ const About = () => {
          <div className="wrapper">
           <div className="about__contacts-item">
               <i className="fa-solid fa-phone"></i>
-              <span>+123456789</span>
+              <span>+39 328 260 8441</span>
           </div>
           <div className="about__contacts-item">
               <i className="fa-solid fa-envelope"></i>
@@ -60,6 +85,10 @@ const About = () => {
           </div>
          </div>
       </div>
+
+      <span className={`scrollBtn ${isActive && "active"}`} onClick={scrollToTop}>
+        <MdOutlineKeyboardDoubleArrowUp />
+      </span>
     </div>
   )
 }

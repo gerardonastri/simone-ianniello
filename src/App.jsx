@@ -4,6 +4,7 @@ import About from './pages/About/About'
 import Navbar from './components/Navbar/Navbar'
 import { Analytics } from "@vercel/analytics/react";
 
+
 function App() {
   return (
     <Router>
