@@ -6,6 +6,7 @@
     padding-top: 20px;
     width: 100%;
     z-index: 3;
+    background-color: var(--color-1);
 }
 .navbar .wrapper{
     position: absolute;
