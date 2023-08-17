@@ -1,0 +1,29 @@
+
+
+.projects__container .wrapper{
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 50px;
+
+}
+
+.projects__container img{
+    width: 100%;
+}
+
+.projects__container span{
+    display: block;
+    text-align: center;
+    color: white;
+    font-family: var(--font-2);
+    letter-spacing: 1px;
+}
+
+
+@media screen and (max-width: 700px) {
+    .projects__container .wrapper{
+        grid-template-columns: 1fr;
+        width: 85%;
+    }
+}

@@ -14,12 +14,12 @@ const Navbar = () => {
         <div className={`navbar__links ${isActive && "active"}`}>
           <a href="/">Home</a>
           <div className="navbar__dropdown">
-            <span id="dropdown" onMouseOver={() => setShowDropdown(true)}>Projects</span>
-            <div className={`navbar__dropdown-container ${showDropdown && "show"}`} onMouseLeave={() => setShowDropdown(false)}>
-              <a href="/">Sound design</a>
-              <a href="/">Post design</a>
-              <a href="/">Live design</a>
-              <a href="/">Podcast</a>
+            <span id="dropdown" onClick={() => setShowDropdown(prev => !prev)} onMouseOver={() => setShowDropdown(true)}>Projects</span>
+            <div className={`navbar__dropdown-container ${showDropdown && "show"}`} onMouseLeave={() => setShowDropdown(false)} >
+              <a href="/projects/sound">Sound design</a>
+              <a href="/projects/post">Post design</a>
+              <a href="/projects/live">Live design</a>
+              <a href="/podcast">Podcast</a>
             </div>
           </div>
           <a href="/about">About me</a>
@@ -32,7 +32,7 @@ const Navbar = () => {
           </div>
         </div>
         {/* HAMBURGER  */}
-        <div className="hamburger" onClick={() => setIsActive(prev => !prev)}>
+        <div className="hamburger" onClick={() => {setIsActive(prev => !prev); setShowDropdown(s => s === true && false)}}>
           <div className='bar' />
           <div className='bar' />
           <div className='bar' />
