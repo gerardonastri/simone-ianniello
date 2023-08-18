@@ -166,6 +166,22 @@
     .navbar__dropdown-container a{
         font-size: 14px;
         color: gray !important;
-
+    }
+    .navbar__links-icons{
+        position: fixed;
+        top: calc(100vh - 90px);
+        /* padding: 20px 0; */
+        height: 60px;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--color-1);
+        z-index: 5;
+        opacity: 1;
+        left: -120%;
+        width: 110%;
+        transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+    .navbar__links-icons.show{
+        left: -5%;
     }
 }

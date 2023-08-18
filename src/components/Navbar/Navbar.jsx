@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './Navbar.css'
 
 const Navbar = () => {
@@ -7,10 +7,13 @@ const Navbar = () => {
   const [showDropdown, setShowDropdown] = useState(false)
   const [isActive, setIsActive] = useState(false)
 
+
   return (
     <nav className="navbar">
       <div className="wrapper">
-        <h1>Simon</h1>
+        <h1>
+          <a href="/">Simon</a>
+        </h1>
         <div className={`navbar__links ${isActive && "active"}`}>
           <a href="/">Home</a>
           <div className="navbar__dropdown">
@@ -23,7 +26,7 @@ const Navbar = () => {
             </div>
           </div>
           <a href="/about">About me</a>
-          <div className="navbar__links-icons">
+          <div className={`navbar__links-icons ${isActive && "show"}`}>
             <a href="https://www.instagram.com/simon_audio/?utm_source=qr&igshid=MzNlNGNkZWQ4Mg%3D%3D"><i className="fa-brands fa-instagram"></i></a>
             <a href="https://www.youtube.com/channel/UC8E8ijYAx5liwa20gm0Y_2g"><i className="fa-brands fa-youtube"></i></a>
             <a href="mailto:simon.audio24@gmail.com"><i className="fa-solid fa-envelope"></i></a>
