@@ -169,7 +169,7 @@
     }
     .navbar__links-icons{
         position: fixed;
-        top: calc(100vh - 90px);
+        top: calc(100vh - 80px);
         /* padding: 20px 0; */
         height: 60px;
         justify-content: center;
